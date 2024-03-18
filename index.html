@@ -36,18 +36,47 @@
             <div class="container">
                 <article>
                     <h2>Contact Form</h2>
-                    <form action="submit" method="post" id="form">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                    <form action="response_page.js.php" method="post" id="form">
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>Message</legend>
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>Additional Options</legend>
+                            <label for="reason">Reason for Contact:</label>
+                            <select id="reason" name="reason">
+                                <option value="general">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label>Preferred Contact Method:</label>
+                            <div>
+                                <input type="radio" id="contact-email" name="contact-method" value="email">
+                                <label for="contact-email">Email</label>
+                                <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                                <label for="contact-phone">Phone</label>
+                                <input type="radio" id="contact-none" name="contact-method" value="none">
+                                <label for="contact-none">None</label>
+                            </div>
+                        </fieldset>
+        
                         <button type="submit">Send</button>
                     </form>
                 </article>
             </div>
         </section>
+        
 
         <section>
             <div class="container">
