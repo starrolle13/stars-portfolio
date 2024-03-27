@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <h1>Welcome to My Website</h1>
+            <img src="https://i.ibb.co/xJ59r5m/Pink-White-Funky-Colourful-Retro-Business-Thank-You-Postcard.png" alt="Pink-White-Funky-Colourful-Retro-Business-Thank-You-Postcard" class="logo">
+        </div>
+    </header>
+
+   <!-- Navigation section -->
+<nav>
+    <div class="container">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="interests.html">Interests</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Contact Form and Another About Me section -->
+    <div class="article">
+        <section>
+            <div class="container">
+                <article>
+                    <h2>Contact Form</h2>
+                    <form action="response_page.html" method="post" id="form">
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>Message</legend>
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>Additional Options</legend>
+                            <label for="reason">Reason for Contact:</label>
+                            <select id="reason" name="reason">
+                                <option value="general">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label>Preferred Contact Method:</label>
+                            <div>
+                                <input type="radio" id="contact-email" name="contact-method" value="email">
+                                <label for="contact-email">Email</label>
+                                <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                                <label for="contact-phone">Phone</label>
+                                <input type="radio" id="contact-none" name="contact-method" value="none">
+                                <label for="contact-none">None</label>
+                            </div>
+                        </fieldset>
+        
+                        <button type="submit">Send</button>
+                    </form>
+                </article>
+            </div>
+        </section>
+        
+
+        <section>
+            <div class="container">
+                <article>
+                    <h2>About Me</h2>
+                    <p>I was born in Los Angeles and I fell in love with coding in 2016. I have been going to school full time since 2021 and I have 2 kids and a husband.</p>
+                </article>
+                <div class="container">
+                    <article>
+                        <h2><a href="invitation.html">Go to Validate Form here</a></h2>
+                        <h2>My Journey</h2>
+                        <p>I was born in Los Angeles, a city of dreams and opportunities. In 2016, I discovered my passion for coding, and since then, it has been an exhilarating journey of learning and growth.
+                        Despite the challenges, I pursued my education full-time starting in 2021, balancing my academic pursuits with the joys and responsibilities of motherhood. With the unwavering support of my loving husband and the motivation from my two amazing kids, I've been able to navigate through the complexities of life while staying committed to my goals.
+                        Coding isn't just a profession for me; it's a way of life. It empowers me to create, innovate, and contribute positively to the world around me. Each line of code I write is a testament to my passion and determination to make a difference.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 My Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

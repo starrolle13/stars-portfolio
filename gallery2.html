@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Invitation Page</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+        <nav>
+            <ul class="topnav">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="invitation.html">Invitation</a>
+                </li>
+				<li><a href="volunteer.html">Volunteers</a>
+                </li>
+                <li><a href="gallery2.html"  class="active">Gallery</a>
+                </li>
+                <li><a href="registration.html">Registration</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <section id="gallery">
+
+<div class="gallery">
+  <a target="_blank" href="images/firefighter.jpg">
+    <img src="/Users/starrolle/Downloads/Assignments/images/firefighter.jpg" alt="firefighter" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="/Users/starrolle/Downloads/Assignments/images/work.jpg">
+    <img src="/Users/starrolle/Downloads/Assignments/images/work.jpg" alt="work" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="images/silhouette.jpg">
+    <img src="/Users/starrolle/Downloads/Assignments/images/silhouette.jpg" alt="silhouette" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="images/event.jpg">
+    <img src="/Users/starrolle/Downloads/Assignments/images/event.jpg" alt="event" width="300" height="200">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+    </section>
+
+    <footer>This events site is for IT3515 tasks.</footer>
+
+    <script type="text/javascript">
+      window.onload = function() {
+    // Preload gallery images
+    var images = ['/Users/starrolle/Downloads/Assignments/images/firefighter.jpg', '/Users/starrolle/Downloads/Assignments/images/work.jpg', '/Users/starrolle/Downloads/Assignments/images/silhouette.jpg', '/Users/starrolle/Downloads/Assignments/images/event.jpg'];
+    images.forEach(function(imageSrc) {
+        var img = new Image();
+        img.src = imageSrc;
+    });
+
+    // Cycling gallery functionality
+    var currentImageIndex = 0;
+    var galleryImgs = document.querySelectorAll('.gallery img');
+
+    function cycleGallery() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        galleryImgs.forEach(function(img, index) {
+            img.src = images[(currentImageIndex + index) % images.length];
+        });
+        setTimeout(cycleGallery, 3000); // Repeat every 3 seconds
+    }
+
+    cycleGallery();
+};
+
+    </script>
+</body>
+
+</html>
