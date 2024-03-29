@@ -22,31 +22,31 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#" onsubmit="return validateForm()">
-            <label for="userName">Username*:</label>
-            <input type="text" id="userName" name="userName" placeholder="Enter your Username" />
+        <form id="registrationForm" action="confirm.html" method="post">
+            <label for="userName">Username:</label>
+            <input type="text" name="userName" placeholder="Enter your Username" required />
 
-            <label for="password">Password*:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your Password" />
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Enter your Password" required />
 
-            <label for="passwordVerify">Verify your Password*:</label>
-            <input type="password" id="passwordVerify" name="passwordVerify" placeholder="Enter your Password again" />
+            <label for="passwordVerify">Verify your Password:</label>
+            <input type="password" name="passwordVerify" placeholder="Enter your Password again" required />
 
-            <label for="firstName">First Name*:</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" />
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" placeholder="Enter your First Name" required />
 
-            <label for="lastName">Last Name*:</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" />
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" placeholder="Enter your Last Name" required />
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your Email Address" />
+            <input type="email" name="email" placeholder="Enter your Email Address" required />
 
             <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" />
+            <input type="tel" name="phoneNumber" placeholder="Enter your Phone Number" required />
 
             <label for="signUpNewsletter">Sign up for newsletter:</label>
-            <input type="radio" id="signUpYes" name="signUpNewsletter" value="Yes" checked> Yes
-            <input type="radio" id="signUpNo" name="signUpNewsletter" value="No"> No
+            <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
+            <input type="radio" name="signUpNewsletter" value="No"> No
 
             <input type="submit" value="Next step">
         </form>
@@ -54,62 +54,20 @@
 
     <footer>This events site is for IT3515 tasks.</footer>
 
-    <script type="text/javascript">
-        function validateForm() {
-            // Get form input values
-            var userName = document.getElementById("userName").value;
-            var password = document.getElementById("password").value;
-            var passwordVerify = document.getElementById("passwordVerify").value;
-            var firstName = document.getElementById("firstName").value;
-            var lastName = document.getElementById("lastName").value;
-            var email = document.getElementById("email").value;
-            var phoneNumber = document.getElementById("phoneNumber").value;
-
-            // Regular expressions for validation
-            var usernameRegex = /^[a-zA-Z0-9]+$/;
-            var passwordRegex = /^.{8,}$/;
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            var phoneNumberRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
-
-            // Validation for each field
-            if (!userName.match(usernameRegex)) {
-                alert("Username must only contain letters and numbers.");
-                return false;
-            }
-
-            if (!password.match(passwordRegex)) {
-                alert("Password must be at least 8 characters long.");
-                return false;
-            }
-
-            if (password !== passwordVerify) {
-                alert("Passwords do not match.");
-                return false;
-            }
-
-            if (firstName === "") {
-                alert("First Name is required.");
-                return false;
-            }
-
-            if (lastName === "") {
-                alert("Last Name is required.");
-                return false;
-            }
-
-            if (email !== "" && !email.match(emailRegex)) {
-                alert("Invalid email format.");
-                return false;
-            }
-
-            if (phoneNumber !== "" && !phoneNumber.match(phoneNumberRegex)) {
-                alert("Invalid phone number format. Use (xxx) xxx-xxxx format.");
-                return false;
-            }
-
-            // If all validations pass, return true to submit the form
-            return true;
-        }
+    <script>
+        window.onload = function() {
+            var form = document.getElementById('registrationForm');
+            form.onsubmit = function(event) {
+                event.preventDefault();
+                var formData = new FormData(form);
+                var cookieString = '';
+                for (var pair of formData.entries()) {
+                    cookieString += pair[0] + '=' + encodeURIComponent(pair[1]) + '; ';
+                }
+                document.cookie = 'formData=' + cookieString;
+                window.location.href = 'confirm.html';
+            };
+        };
     </script>
 </body>
 
